@@ -1,0 +1,20 @@
+# Claude Code local
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Temporales / build
+*.log
+dist/
+build/
+node_modules/
+
+# PDFs generados (la fuente es Markdown)
+*.pdf

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WELCOME TO THE FUTURE — Automatización a tu medida</title>
+  <meta name="description" content="Democratizamos la automatización industrial. Hardware, software y lógica a tu medida, sin vendor lock-in y pagado con resultados. IIoT, Edge AI, visión artificial y más." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+  <script defer src="assets/js/alpine.min.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body x-data>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand">WTTF<span class="dot"></span></a>
+      <nav class="nav-links">
+        <a class="link" href="#philosophy" x-text="$store.i18n.t('nav.philosophy')">Filosofía</a>
+        <a class="link" href="#services" x-text="$store.i18n.t('nav.services')">Servicios</a>
+        <a class="link" href="#model" x-text="$store.i18n.t('nav.model')">Modelo</a>
+        <a class="link" href="#method" x-text="$store.i18n.t('nav.method')">Cómo trabajamos</a>
+        <div class="lang-toggle">
+          <button :class="$store.i18n.lang==='es' && 'active'" @click="$store.i18n.set('es')" class="active">ES</button>
+          <button :class="$store.i18n.lang==='en' && 'active'" @click="$store.i18n.set('en')">EN</button>
+        </div>
+        <a class="btn btn-primary nav-cta" href="#contact" x-text="$store.i18n.t('nav.cta')">Hablemos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-status">
+          <span class="led"></span><span x-text="$store.i18n.t('hero.status')">SISTEMA EN LÍNEA</span>
+        </div>
+        <h1>
+          <span x-text="$store.i18n.t('hero.title_a')">Bienvenido al futuro de tu </span><span class="accent" x-text="$store.i18n.t('hero.title_b')">operación</span>.
+        </h1>
+        <p class="lead" x-text="$store.i18n.t('hero.lead')">Construimos el hardware, el software y la lógica que convierten el problema que hoy frena tu productividad en una ventaja medible. A tu medida, sin candados de proveedor y pagado con resultados.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact"><span x-text="$store.i18n.t('hero.cta')">Hablemos de tu proceso</span> <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="#services" x-text="$store.i18n.t('hero.cta2')">Ver qué resolvemos</a>
+        </div>
+
+        <!-- TELEMETRY PANEL (señal viva) -->
+        <div class="telemetry">
+          <div class="telemetry-bar">
+            <span x-text="$store.i18n.t('tel.bar')">TELEMETRÍA · DEMO EN VIVO</span>
+            <span class="dots"><span></span><span></span><span></span></span>
+          </div>
+          <canvas id="signal" aria-hidden="true"></canvas>
+          <div class="channels">
+            <div class="channel">
+              <div class="ch-label">CH01 · <span x-text="$store.i18n.t('tel.ch1')">TEMPERATURA</span></div>
+              <div class="ch-value amber"><span id="ch-temp">61.0</span><span class="ch-unit"> °C</span></div>
+            </div>
+            <div class="channel">
+              <div class="ch-label">CH02 · <span x-text="$store.i18n.t('tel.ch2')">PRESIÓN</span></div>
+              <div class="ch-value cyan"><span id="ch-pres">4.10</span><span class="ch-unit"> bar</span></div>
+            </div>
+            <div class="channel">
+              <div class="ch-label">CH03 · <span x-text="$store.i18n.t('tel.ch3')">POTENCIA</span></div>
+              <div class="ch-value amber"><span id="ch-pow">812</span><span class="ch-unit"> W</span></div>
+            </div>
+            <div class="channel">
+              <div class="ch-label">CH04 · <span x-text="$store.i18n.t('tel.ch4')">AHORRO</span></div>
+              <div class="ch-value cyan"><span id="ch-save">22.4</span><span class="ch-unit"> %</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section id="philosophy" class="philo">
+      <div class="wrap">
+        <span class="label eyebrow" x-text="$store.i18n.t('philo.eyebrow')">LA IDEA</span>
+        <p class="big reveal">
+          <span x-text="$store.i18n.t('philo.big_a')">Democratizamos la automatización. </span><span class="hl" x-text="$store.i18n.t('philo.big_hl')">Rompemos la dependencia</span><span x-text="$store.i18n.t('philo.big_b')"> de las grandes marcas.</span>
+        </p>
+        <p class="lead" x-text="$store.i18n.t('philo.lead')">Durante décadas, automatizar fue un privilegio: licencias, hardware propietario y candados de proveedor. Nosotros construimos tecnología abierta, a la medida, por una fracción del costo — y solo ganamos cuando tú ganas.</p>
+        <div class="philo-grid reveal">
+          <div class="philo-cell">
+            <h3 x-text="$store.i18n.t('philo.c1_t')">Sin cajas negras</h3>
+            <p x-text="$store.i18n.t('philo.c1_p')">Tú eres dueño de tu operación, de tus datos y de tu futuro. Tecnología abierta y documentada.</p>
+          </div>
+          <div class="philo-cell">
+            <h3 x-text="$store.i18n.t('philo.c2_t')">A tu medida</h3>
+            <p x-text="$store.i18n.t('philo.c2_p')">No configuramos un producto cerrado: diseñamos hardware, firmware y software para tu proceso real.</p>
+          </div>
+          <div class="philo-cell">
+            <h3 x-text="$store.i18n.t('philo.c3_t')">Riesgo compartido</h3>
+            <p x-text="$store.i18n.t('philo.c3_p')">Costo de entrada mínimo y nuestra ganancia atada a los ahorros reales. Si tú no ganas, no cobramos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="wrap">
+        <span class="label" x-text="$store.i18n.t('svc.eyebrow')">QUÉ RESOLVEMOS</span>
+        <h2 class="section-title" x-text="$store.i18n.t('svc.title')">Siete líneas de ingeniería, una sola promesa</h2>
+        <div class="svc-grid">
+          <article class="svc reveal">
+            <div class="num">01</div>
+            <h3 x-text="$store.i18n.t('svc.1_t')">Adquisición de Datos e IoT Industrial</h3>
+            <p x-text="$store.i18n.t('svc.1_p')">Telemetría de extremo a extremo, del sensor al servidor. Tu planta en tiempo real, esté donde esté.</p>
+            <span class="tag" x-text="$store.i18n.t('svc.1_tag')">Celular · Wi-Fi · LoRa · Ethernet</span>
+          </article>
+          <article class="svc reveal">
+            <div class="num">02</div>
+            <h3 x-text="$store.i18n.t('svc.2_t')">IA en el Borde (Edge Computing)</h3>
+            <p x-text="$store.i18n.t('svc.2_p')">Decisiones locales en tiempo real, sin latencia ni dependencia de la nube. Opera aunque caiga internet.</p>
+            <span class="tag" x-text="$store.i18n.t('svc.2_tag')">Edge AI · Tiempo real</span>
+          </article>
+          <article class="svc reveal">
+            <div class="num">03</div>
+            <h3 x-text="$store.i18n.t('svc.3_t')">Analítica e IA para Procesos</h3>
+            <p x-text="$store.i18n.t('svc.3_p')">Mantenimiento predictivo y optimización autónoma de variables críticas. Anticipa, no apagues incendios.</p>
+            <span class="tag" x-text="$store.i18n.t('svc.3_tag')">Predictivo · Optimización</span>
+          </article>
+          <article class="svc reveal">
+            <div class="num">04</div>
+            <h3 x-text="$store.i18n.t('svc.4_t')">Videovigilancia Analítica</h3>
+            <p x-text="$store.i18n.t('svc.4_p')">Cámaras con IA que auditan procesos, cuentan inventarios y detectan anomalías. Cámaras que entienden.</p>
+            <span class="tag" x-text="$store.i18n.t('svc.4_tag')">Visión artificial</span>
+          </article>
+          <article class="svc reveal">
+            <div class="num">05</div>
+            <h3 x-text="$store.i18n.t('svc.5_t')">Sistemas Hidráulicos e Hídricos</h3>
+            <p x-text="$store.i18n.t('svc.5_p')">Optimización de redes de fluidos y estaciones de bombeo con gemelos digitales y control avanzado.</p>
+            <span class="tag" x-text="$store.i18n.t('svc.5_tag')">Bombeo · Acueductos</span>
+          </article>
+          <article class="svc reveal">
+            <div class="num">06</div>
+            <h3 x-text="$store.i18n.t('svc.6_t')">Ingeniería de Sistemas Eléctricos</h3>
+            <p x-text="$store.i18n.t('svc.6_p')">Automatización trifásica, gestión de potencia y eficiencia energética con soporte para energía solar.</p>
+            <span class="tag" x-text="$store.i18n.t('svc.6_tag')">Trifásico · Solar</span>
+          </article>
+          <article class="svc reveal">
+            <div class="num">07</div>
+            <h3 x-text="$store.i18n.t('svc.7_t')">Plataformas Web y Dashboards</h3>
+            <p x-text="$store.i18n.t('svc.7_p')">Interfaces modernas y centralizadas: toda tu operación, en una sola pantalla.</p>
+            <span class="tag" x-text="$store.i18n.t('svc.7_tag')">Dashboards en vivo</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODEL -->
+    <section id="model" class="model">
+      <div class="wrap">
+        <span class="label" x-text="$store.i18n.t('model.eyebrow')">EL MODELO</span>
+        <h2 class="section-title" x-text="$store.i18n.t('model.title')">No vendemos cajas negras. Construimos alianzas.</h2>
+        <div class="model-grid">
+          <div class="model-card entry reveal">
+            <div class="stat">~5%</div>
+            <h3 x-text="$store.i18n.t('model.entry_t')">Costo de entrada</h3>
+            <p x-text="$store.i18n.t('model.entry_p')">Instalación e integración por cerca del 5% de lo que cobraría un fabricante de gama alta. Que el costo nunca sea la barrera.</p>
+          </div>
+          <div class="model-card gain reveal">
+            <div class="stat">%<span style="font-size:1.4rem; color:var(--c-text-dim)"> →</span></div>
+            <h3 x-text="$store.i18n.t('model.gain_t')">Ganancia compartida</h3>
+            <p x-text="$store.i18n.t('model.gain_p')">Nuestra utilidad es un porcentaje de los ahorros y beneficios reales que generamos. Incentivos 100% alineados.</p>
+          </div>
+        </div>
+        <div class="model-formula reveal">
+          <span class="cyan" x-text="$store.i18n.t('model.formula_a')">Si tú no ahorras,</span><span class="amber" x-text="$store.i18n.t('model.formula_b')"> nosotros no ganamos.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- METHOD -->
+    <section id="method">
+      <div class="wrap">
+        <span class="label eyebrow" x-text="$store.i18n.t('method.eyebrow')">CÓMO TRABAJAMOS</span>
+        <h2 class="section-title" x-text="$store.i18n.t('method.title')">Del diagnóstico al ahorro medible</h2>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="num">01</div>
+            <h3 x-text="$store.i18n.t('method.1_t')">Diagnóstico</h3>
+            <p x-text="$store.i18n.t('method.1_p')">Visitamos tu proceso y encontramos el cuello de botella convertible en dinero.</p>
+          </div>
+          <div class="step reveal">
+            <div class="num">02</div>
+            <h3 x-text="$store.i18n.t('method.2_t')">Línea base</h3>
+            <p x-text="$store.i18n.t('method.2_p')">Medimos y firmamos tu desempeño actual: la referencia para calcular el ahorro.</p>
+          </div>
+          <div class="step reveal">
+            <div class="num">03</div>
+            <h3 x-text="$store.i18n.t('method.3_t')">Piloto</h3>
+            <p x-text="$store.i18n.t('method.3_p')">Implementación acotada y rápida que prueba el valor con bajo riesgo.</p>
+          </div>
+          <div class="step reveal">
+            <div class="num">04</div>
+            <h3 x-text="$store.i18n.t('method.4_t')">Despliegue</h3>
+            <p x-text="$store.i18n.t('method.4_p')">Hardware, firmware, edge, analítica y dashboard a la medida, instalados y en marcha.</p>
+          </div>
+          <div class="step reveal">
+            <div class="num">05</div>
+            <h3 x-text="$store.i18n.t('method.5_t')">Operación y M&V</h3>
+            <p x-text="$store.i18n.t('method.5_p')">Monitoreo, soporte y verificación transparente del beneficio. Liquidación periódica.</p>
+          </div>
+          <div class="step reveal">
+            <div class="num">06</div>
+            <h3 x-text="$store.i18n.t('method.6_t')">Optimización</h3>
+            <p x-text="$store.i18n.t('method.6_p')">Con los datos, mejoramos y abrimos nuevas oportunidades. La alianza crece.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / CONTACT -->
+    <section id="contact" class="cta">
+      <div class="wrap">
+        <span class="label" x-text="$store.i18n.t('nav.cta')">Hablemos</span>
+        <h2 x-text="$store.i18n.t('cta.title')">Piensa en ese problema que hoy te frena. Eso es lo que resolvemos.</h2>
+        <p class="lead" x-text="$store.i18n.t('cta.lead')">Cuéntanos tu proceso y diseñamos una propuesta a tu medida, con costo de entrada mínimo y pago por resultados.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="mailto:rafaelnotty@gmail.com"><span x-text="$store.i18n.t('cta.btn')">Hablemos de tu proceso</span> <span class="arrow">→</span></a>
+        </div>
+        <p class="contact-line">
+          <span x-text="$store.i18n.t('cta.contact')">Escríbenos:</span>
+          <a href="mailto:rafaelnotty@gmail.com">rafaelnotty@gmail.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <strong>WELCOME TO THE FUTURE</strong> ·
+        <span x-text="$store.i18n.t('footer.tag')">Democratizando la automatización industrial.</span>
+      </div>
+      <div x-text="$store.i18n.t('footer.disclaimer')">Sitio de demostración · Empresa en constitución (S.A.S.)</div>
+    </div>
+  </footer>
+
+</body>
+</html>
