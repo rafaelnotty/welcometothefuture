@@ -13,7 +13,7 @@ Control"** (ver [`../empresa/01-identidad/brand-book.md`](../empresa/01-identida
 ## Ejecutar localmente
 
 ```
-cd web
+cd docs
 python -m http.server 8000
 ```
 
@@ -22,7 +22,7 @@ Abrir `http://localhost:8000`.
 ## Estructura
 
 ```
-web/
+docs/
 ├── index.html
 └── assets/
     ├── css/styles.css      tokens + estilos

@@ -14,7 +14,7 @@ constituirá como **S.A.S. en Colombia**.
 
 El repo tiene dos pilares:
 - `empresa/` — documentación corporativa (Markdown).
-- `web/` — landing de marketing bilingüe (ES/EN), estática.
+- `docs/` — landing de marketing bilingüe (ES/EN), estática.
 
 ## Estructura
 
@@ -41,7 +41,7 @@ El repo tiene dos pilares:
 │       ├── catalogo-servicios.md   (las 7 líneas de servicio)
 │       ├── metodologia-de-trabajo.md
 │       └── plan-de-negocio.md
-└── web/
+└── docs/
     ├── index.html                  contenido con texto ES inline + bindings Alpine
     ├── README.md
     └── assets/
@@ -56,7 +56,7 @@ El repo tiene dos pilares:
 - **Dirección de diseño: "A — Sala de Control"** (panel SCADA premium). Se
   descartaron B (Plano Técnico/blueprint) y C (Manifiesto Disruptor).
   - Paleta: grafito `#0E1217`, acero `#161D26`, ámbar `#FFB23E`, cian `#3DD6D0`,
-    texto `#E8ECF1`. Definidas en `web/assets/css/styles.css` (`:root`) y en
+    texto `#E8ECF1`. Definidas en `docs/assets/css/styles.css` (`:root`) y en
     `empresa/01-identidad/brand-book.md`.
   - Tipografía: Space Mono (display), Inter (cuerpo), JetBrains Mono (datos).
   - **Elemento firma:** la "señal viva" = onda de telemetría animada en canvas
@@ -68,7 +68,7 @@ El repo tiene dos pilares:
 ## Cómo ejecutar el sitio
 
 ```
-cd web
+cd docs
 python -m http.server 8000
 ```
 Abrir `http://localhost:8000`. (También funciona con doble clic en `index.html`
@@ -77,7 +77,7 @@ fiel a producción.)
 
 ## Convenciones / dónde tocar qué
 
-- **Editar textos del sitio (ES y EN):** objeto `I18N` en `web/assets/js/app.js`.
+- **Editar textos del sitio (ES y EN):** objeto `I18N` en `docs/assets/js/app.js`.
   Cada texto vive bajo una clave (`hero.lead`, `svc.1_t`, …). El `index.html`
   tiene el texto **ES escrito inline como respaldo** + `x-text="$store.i18n.t('clave')"`
   que lo sobrescribe. **Si agregas/cambias un texto, actualiza AMBOS** (la clave en
@@ -100,14 +100,16 @@ HECHO:
 - [x] Verificado: JS pasa `node --check`; assets sirven 200.
 
 PENDIENTE / PRÓXIMOS PASOS:
-- [ ] **Logo y favicon** definitivos (monograma `WTTF ●`). Carpeta `web/assets/img/` vacía.
+- [ ] **Logo y favicon** definitivos (monograma `WTTF ●`). Carpeta `docs/assets/img/` vacía.
 - [ ] **Formulario de contacto real** (hoy el CTA abre `mailto:rafaelnotty@gmail.com`).
 - [ ] **Rellenar los `[corchetes]`** de los documentos legales (ciudad, capital,
       accionistas, % y plazos) y **llevarlos a un abogado/contador**.
 - [ ] (Opcional) Auto-alojar las fuentes de Google para 100% offline.
 - [ ] (Opcional) Meta Open Graph + imagen para compartir en redes.
 - [ ] (Opcional) Generar PDFs con estética de marca de la documentación.
-- [ ] (Opcional) Desplegar (Netlify / GitHub Pages / VPS). El sitio es estático.
+- [x] Deploy por **GitHub Pages** desde la carpeta `docs/` (rama `main`). Falta el
+      paso manual una sola vez: Settings → Pages → Source: Deploy from a branch →
+      `main` / `docs`. URL: https://rafaelnotty.github.io/welcometothefuture/
 - [ ] (Futuro) Casos de éxito reales cuando existan; sección de testimonios.
 
 ## Advertencias importantes
@@ -119,7 +121,12 @@ PENDIENTE / PRÓXIMOS PASOS:
 - Las cifras financieras del plan de negocio y del pricing son **parámetros de
   referencia**, no datos reales todavía.
 
-## No es un repositorio git
+## Git / remoto
 
-El proyecto aún no está bajo control de versiones. Si se desea, `git init` antes
-de empezar a iterar en serio (útil para el flujo de revisiones).
+Repo en GitHub: https://github.com/rafaelnotty/welcometothefuture (rama `main`).
+El sitio se publica desde `docs/` vía GitHub Pages (deploy por rama, sin Actions).
+
+Nota: el token configurado **no tiene scope `workflow`**, así que no se pueden
+pushear archivos en `.github/workflows/`. Por eso se usa Pages por rama (`/docs`)
+y no un workflow de Actions. Si en el futuro se quiere CI, añadir el scope
+`workflow` al PAT primero.
