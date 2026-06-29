@@ -11,8 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
-  <script defer src="assets/js/alpine.min.js"></script>
+  <!-- app.js debe ir ANTES de Alpine: registra el store $store.i18n en el evento
+       alpine:init, que Alpine dispara al arrancar. Si Alpine cargara primero,
+       arrancaría antes de que el listener exista y el store quedaría undefined. -->
   <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/alpine.min.js"></script>
 </head>
 <body x-data>
 
