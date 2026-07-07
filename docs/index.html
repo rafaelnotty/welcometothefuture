@@ -28,6 +28,7 @@
         <a class="link" href="#services" x-text="$store.i18n.t('nav.services')">Servicios</a>
         <a class="link" href="#model" x-text="$store.i18n.t('nav.model')">Modelo</a>
         <a class="link" href="#method" x-text="$store.i18n.t('nav.method')">Cómo trabajamos</a>
+        <a class="link" href="#portfolio" x-text="$store.i18n.t('nav.portfolio')">Portafolio</a>
         <div class="lang-toggle">
           <button :class="$store.i18n.lang==='es' && 'active'" @click="$store.i18n.set('es')" class="active">ES</button>
           <button :class="$store.i18n.lang==='en' && 'active'" @click="$store.i18n.set('en')">EN</button>
@@ -218,6 +219,135 @@
             <div class="num">06</div>
             <h3 x-text="$store.i18n.t('method.6_t')">Optimización</h3>
             <p x-text="$store.i18n.t('method.6_p')">Con los datos, mejoramos y abrimos nuevas oportunidades. La alianza crece.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO / I+D -->
+    <section id="portfolio" class="portfolio">
+      <div class="wrap">
+        <span class="label" x-text="$store.i18n.t('port.eyebrow')">PORTAFOLIO · I+D PROPIO</span>
+        <h2 class="section-title" x-text="$store.i18n.t('port.title')">Esto no es una promesa: ya está construido</h2>
+        <p class="lead" x-text="$store.i18n.t('port.lead')">WTTF no arranca de cero. Estos son desarrollos propios de I+D — la misma ingeniería, el mismo estándar y las mismas manos que van a entrar a tu operación.</p>
+
+        <div class="proj-grid">
+          <article class="proj reveal">
+            <div class="proj-head">
+              <span class="num">LAB-01</span>
+              <span class="status"><span class="led"></span><span x-text="$store.i18n.t('port.1_s')">I+D EN CAMPO</span></span>
+            </div>
+            <h3 x-text="$store.i18n.t('port.1_t')">HidroTwin — Gemelo digital de redes de agua</h3>
+            <p x-text="$store.i18n.t('port.1_p')">Plataforma integral creada desde cero: solver hidráulico de red por nodos, análisis de bombas en paralelo, motor analítico SCADA y nodos IoT propios ESP32-C6 con telemetría celular LTE. Del modelo matemático al hardware instalado.</p>
+            <div class="proj-tags">
+              <span class="tag">ESP32-C6</span>
+              <span class="tag">LTE 4G</span>
+              <span class="tag" x-text="$store.i18n.t('port.1_tag')">Solver hidráulico</span>
+            </div>
+          </article>
+
+          <article class="proj reveal">
+            <div class="proj-head">
+              <span class="num">LAB-02</span>
+              <span class="status"><span class="led"></span><span x-text="$store.i18n.t('port.2_s')">PATRÓN PROBADO</span></span>
+            </div>
+            <h3 x-text="$store.i18n.t('port.2_t')">Configuración en campo, sin recompilar</h3>
+            <p x-text="$store.i18n.t('port.2_p')">El propio equipo levanta su red Wi-Fi y sirve un panel de configuración: el técnico se conecta desde el celular, ajusta parámetros, corre diagnósticos en vivo y reinicia. Sin apps, sin cables, sin tocar el código.</p>
+            <div class="proj-tags">
+              <span class="tag">SoftAP</span>
+              <span class="tag" x-text="$store.i18n.t('port.2_tag1')">Servidor web embebido</span>
+              <span class="tag" x-text="$store.i18n.t('port.2_tag2')">Diagnóstico en vivo</span>
+            </div>
+          </article>
+
+          <article class="proj reveal">
+            <div class="proj-head">
+              <span class="num">LAB-03</span>
+              <span class="status"><span class="led"></span><span x-text="$store.i18n.t('port.3_s')">VALIDADO EN HARDWARE</span></span>
+            </div>
+            <h3 x-text="$store.i18n.t('port.3_t')">Firmware que sobrevive al mundo real</h3>
+            <p x-text="$store.i18n.t('port.3_p')">Firmware a la medida en C y MicroPython: aprovisionamiento en flash, criba de calidad de lotes de hardware y depuración a nivel de radio. Cuando una placa de bajo costo falla, encontramos el porqué — y lo resolvemos en firmware.</p>
+            <div class="proj-tags">
+              <span class="tag">ESP32 S2/S3/C3/C6</span>
+              <span class="tag">MicroPython</span>
+              <span class="tag" x-text="$store.i18n.t('port.3_tag')">QA de hardware</span>
+            </div>
+          </article>
+
+          <article class="proj reveal">
+            <div class="proj-head">
+              <span class="num">LAB-04</span>
+              <span class="status"><span class="led"></span><span x-text="$store.i18n.t('port.4_s')">OPERATIVO</span></span>
+            </div>
+            <h3 x-text="$store.i18n.t('port.4_t')">Del borde a la pantalla</h3>
+            <p x-text="$store.i18n.t('port.4_p')">Gateways en Linux embebido (OrangePi), backends asíncronos en Python (FastAPI) y dashboards e informes autocontenidos que funcionan hasta sin internet. Este mismo sitio es la muestra: sin frameworks pesados, carga instantánea.</p>
+            <div class="proj-tags">
+              <span class="tag">Linux SBC</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Offline-first</span>
+            </div>
+          </article>
+
+          <article class="proj reveal">
+            <div class="proj-head">
+              <span class="num">LAB-05</span>
+              <span class="status"><span class="led"></span><span x-text="$store.i18n.t('port.5_s')">I+D ACTIVO</span></span>
+            </div>
+            <h3 x-text="$store.i18n.t('port.5_t')">Edge AI y visión artificial</h3>
+            <p x-text="$store.i18n.t('port.5_p')">Clasificación e inferencia en tiempo real corriendo localmente en SBC ARM (OrangePi 5 Pro, Jetson): modelos entrenados con Keras/TensorFlow y desplegados optimizados sobre Linux. La base de las cámaras que entienden lo que ven.</p>
+            <div class="proj-tags">
+              <span class="tag">TensorFlow/Keras</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">SBC ARM</span>
+            </div>
+          </article>
+
+          <article class="proj reveal">
+            <div class="proj-head">
+              <span class="num">LAB-06</span>
+              <span class="status"><span class="led"></span><span x-text="$store.i18n.t('port.6_s')">FABRICADO</span></span>
+            </div>
+            <h3 x-text="$store.i18n.t('port.6_t')">Hardware completo, de la placa a la carcasa</h3>
+            <p x-text="$store.i18n.t('port.6_p')">Dispositivos IoT terminados, no prototipos sueltos: electrónica, firmware, conectividad celular y carcasa en CAD paramétrico (FreeCAD + Python) impresa en 3D, con pasacables y slots de antena, lista para instalarse en campo.</p>
+            <div class="proj-tags">
+              <span class="tag">FreeCAD</span>
+              <span class="tag" x-text="$store.i18n.t('port.6_tag1')">Impresión 3D</span>
+              <span class="tag" x-text="$store.i18n.t('port.6_tag2')">Diseño paramétrico</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="stack-strip reveal">
+          <span class="stack-label">STACK</span>
+          <span x-text="$store.i18n.t('port.stack')">Python · FastAPI · TensorFlow/Keras · OpenCV · C/C++ (ESP-IDF) · MicroPython · ESP32 S2/S3/C3/C6 · LTE 4G · LoRa · ESP-NOW · Linux embebido (OrangePi/Jetson) · SCADA (Wonderware) · IEC 61850 · MODBUS · Docker · GCP · FreeCAD + impresión 3D</span>
+        </div>
+
+        <div class="founder reveal">
+          <span class="label eyebrow" x-text="$store.i18n.t('port.founder_eyebrow')">QUIÉN ESTÁ DETRÁS</span>
+          <h3 x-text="$store.i18n.t('port.founder_t')">De la subestación al firmware, una sola cadena</h3>
+          <p x-text="$store.i18n.t('port.founder_p')">WTTF nace de la trayectoria de Rafael Rincón Villamizar: ingeniero eléctrico y de telecomunicaciones, magíster en ingeniería (IA, datos y control inteligente) y 15 años liderando infraestructura crítica de agua, energía y vialidad — del diseño de subestaciones AT/MT y el SCADA de una planta de potabilización, al firmware del sensor y el dashboard analítico. Los ingenieros OT no suelen programar; los developers no han visto una subestación. Aquí ambos mundos operan en unas mismas manos: por eso podemos prometer cero cajas negras.</p>
+          <div class="founder-stats">
+            <div class="fstat">
+              <span class="fstat-n">15+</span>
+              <span class="fstat-l" x-text="$store.i18n.t('port.f1_l')">años en infraestructura crítica</span>
+            </div>
+            <div class="fstat">
+              <span class="fstat-n">OT+IT</span>
+              <span class="fstat-l" x-text="$store.i18n.t('port.f2_l')">de la subestación al software</span>
+            </div>
+            <div class="fstat">
+              <span class="fstat-n">MsC.</span>
+              <span class="fstat-l" x-text="$store.i18n.t('port.f3_l')">IA, datos y control inteligente</span>
+            </div>
+            <div class="fstat">
+              <span class="fstat-n">3</span>
+              <span class="fstat-l" x-text="$store.i18n.t('port.f4_l')">países con proyectos ejecutados</span>
+            </div>
+          </div>
+          <div class="founder-actions">
+            <a class="btn btn-ghost" id="link_cv" href="https://rafael_rincon_villamizar.welcometothefuture.online/" target="_blank" rel="noopener">
+              <span x-text="$store.i18n.t('port.cv_btn')">Ver CV completo</span> <span class="arrow">→</span>
+            </a>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 # CLAUDE.md — WELCOME TO THE FUTURE
 
 > Contexto del proyecto para retomar el desarrollo en cualquier sesión. Claude
-> Code carga este archivo automáticamente. Última actualización: 2026-06-28.
+> Code carga este archivo automáticamente. Última actualización: 2026-07-07.
 
 ## Qué es este proyecto
 
@@ -98,6 +98,27 @@ HECHO:
 - [x] Sitio web Dirección A, bilingüe, con telemetría animada.
 - [x] Bug de "pantalla en blanco" corregido (Alpine local + texto inline + sin x-cloak).
 - [x] Verificado: JS pasa `node --check`; assets sirven 200.
+- [x] Sección **Portafolio · I+D propio** (`#portfolio`, entre Método y CTA):
+      6 fichas LAB-01..06 (HidroTwin gemelo digital, portal de configuración
+      embebido, firmware ESP-IDF/MicroPython con QA de hardware, edge Linux +
+      FastAPI + dashboards offline-first, Edge AI/visión en SBC ARM, hardware
+      completo con carcasa FreeCAD/3D), franja de stack y bloque "Quién está
+      detrás". Enfoque honesto: I+D propio, NO casos de clientes (esos siguen
+      pendientes para cuando existan). Claves `port.*` en I18N + respaldo ES inline.
+- [x] **Integración del CV real** (2026-07-07): el bloque de fundador usa el perfil
+      del CV en https://rafael_rincon_villamizar.welcometothefuture.online/
+      (Rafael Rincón Villamizar, Ing. Eléctrico+Telecom, MsC., 15 años en
+      infraestructura crítica, OT+IT) con 4 stats y botón `#link_cv` "Ver CV
+      completo". Ojo: esa URL devuelve 403 sin User-Agent de navegador.
+- [x] **Efectos de scroll** (app.js `initScrollFx` + `initReveal`): barra de
+      progreso de lectura (`.scroll-progress`), reveals escalonados (delay 70ms
+      que se limpia en `transitionend` para no retrasar hovers), parallax suave
+      del panel de telemetría y resaltado de sección activa en el nav.
+- [x] **Telemetría interactiva**: cursor de osciloscopio (línea + puntos por onda
+      + lectura `t+x.xx s`) al pasar el puntero, pulso al clic. Con
+      `prefers-reduced-motion` NO hay loop continuo pero el panel responde a la
+      interacción y los canales actualizan cada 6 s (antes quedaba 100% estático,
+      que era la queja en sistemas Linux con animaciones desactivadas).
 
 PENDIENTE / PRÓXIMOS PASOS:
 - [ ] **Logo y favicon** definitivos (monograma `WTTF ●`). Carpeta `docs/assets/img/` vacía.
